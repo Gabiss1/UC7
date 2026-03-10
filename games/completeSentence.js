@@ -12,6 +12,10 @@ function completeSentence() {
             answer: "will"
         },
         {
+            sentence: "I wish you ____ here...",
+            answer: "were"
+        },
+        {
             sentence: "Let's run away and ___ not ever look back...",
             answer: "do"
         }
