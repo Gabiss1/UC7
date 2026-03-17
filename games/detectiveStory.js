@@ -58,6 +58,7 @@ function detectiveStory() {
     }
 
     readline.question("\nPress ENTER to continue...");
-}
+
+}    
 
 module.exports = detectiveStory;
