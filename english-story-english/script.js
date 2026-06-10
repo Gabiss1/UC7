@@ -48,20 +48,20 @@ const chapters = [
     {
         image: "images/poke3.jpg",
 
-        text: "Heracross ____ ash's last pokémon and he need to defeat Blastoise, ",
+        text: "Heracross ____ ash's last pokémon and he needed to defeat Blastoise, when the battle seems lost he moved forward and ___ the battle.",
 
         options: [
             [
-                { word: "made", correct: true },
-                { word: "make", correct: false },
-                { word: "became", correct: true },
-                { word: "become", correct: false }
+                { word: "was", correct: true },
+                { word: "", correct: false },
+                { word: "are", correct: true },
+                { word: "changed", correct: false }
             ],
             [
                 { word: "made", correct: true },
-                { word: "make", correct: false },
+                { word: "stared", correct: false },
                 { word: "became", correct: true },
-                { word: "become", correct: false }
+                { word: "won", correct: false }
             ]
         ],
 
