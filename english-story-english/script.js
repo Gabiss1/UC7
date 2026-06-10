@@ -53,7 +53,7 @@ const chapters = [
         options: [
             [
                 { word: "was", correct: true },
-                { word: "", correct: false },
+                { word: "is", correct: false },
                 { word: "are", correct: true },
                 { word: "changed", correct: false }
             ],
@@ -65,7 +65,7 @@ const chapters = [
             ]
         ],
 
-        feedback: ''
+        feedback: '"was" and "won" are the best options to use in this case.'
     },
 
     {
@@ -141,24 +141,25 @@ function loadChapter() {
 
     storyImage.src = chapter.image;
 
-    chapter.options.forEach(option => {
-
-        const button = document.createElement("button");
-
-        button.innerText = option.word;
-
-        button.classList.add("option-button");
-
-        button.onclick = () => selectOption(option);
-
-        optionsContainer.appendChild(button);
+    chapter.options.forEach(list => {
+        list.forEach(option => {
+            const button = document.createElement("button");
+    
+            button.innerText = option.word;
+    
+            button.classList.add("option-button");
+    
+            button.onclick = () => selectOption(option);
+    
+            optionsContainer.appendChild(button);
+        });
+        chapterText.innerText = currentChapter + 1;
+    
+        progressBar.style.width = ((currentChapter) / chapters.length) * 100 + "%";
+    
+        completeStory.push(chapter);
     });
 
-    chapterText.innerText = currentChapter + 1;
-
-    progressBar.style.width = ((currentChapter) / chapters.length) * 100 + "%";
-
-    completeStory.push(chapter);
 }
 
 let correctSelections = 0;
@@ -168,13 +169,10 @@ function selectOption(option) {
     if(option.correct) {
         xp += 10;
         correctSelections++;
-
-        feedback.innerHTML = chapters[currentChapter].feedback;
     } else {
         xp += 3;
-
-        feedback.innerHTML = chapters[currentChapter].feedback;
     }
+    feedback.innerHTML = chapters[currentChapter].feedback;
 
     xpText.innerText = xp;
 
@@ -191,7 +189,6 @@ function selectOption(option) {
             }, 1500);
 
         } else {
-
             showFinalScreen();
         }
     }
