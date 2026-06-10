@@ -1,82 +1,117 @@
 const chapters = [
     {
-        image: "images/castle.jpg",
+        image: "images/poke1.png",
 
-        text: 'Emma _____ a new student when she _____ the magic castle.',
+        text: 'Ash ___ his last badge and began _____ to compete in the league.',
 
         options: [
-            { word: "was", correct: true },
-            { word: "were", correct: false },
-            { word: "entered", correct: true },
-            { word: "enter", correct: false }
+            [
+                { word: "get", correct: true },
+                { word: "wins", correct: true },
+                { word: "buys", correct: false },
+                { word: "enter", correct: false }
+            ],
+            [
+                { word: "preparing", correct: true },
+                { word: "running", correct: false },
+                { word: "crying", correct: false },
+                { word: "going", correct: true }
+            ]
         ],
 
-        feedbackCorrect: 'Correct! "was" and "entered" are correct.',
-        feedbackWrong: 'Incorrect. Try to remember verb forms.'
+        feedback: 'Correct! "get"/"wins" and "preparing"/"going" are the best options to complete this sentence.'
     },
 
     {
-        image: "images/forest.jpg",
+        image: "images/poke2.jpg",
 
-        text: 'The students _____ walking when they _____ a strange creature.',
+        text: 'He decided to ____ Pikachu, Heracross and Totodile in his team. To complete the party to his first chellenge, he ______ Sceptile, Charizard and Dragonite',
 
         options: [
-            { word: "were", correct: true },
-            { word: "was", correct: false },
-            { word: "saw", correct: true },
-            { word: "see", correct: false }
+            [
+                { word: "keep", correct: true },
+                { word: "kill", correct: false },
+                { word: "seal", correct: false },
+                { word: "see", correct: false }
+            ],
+            [
+                { word: "lost", correct: false },
+                { word: "ate", correct: false },
+                { word: "chose", correct: true },
+                { word: "spoke", correct: false }
+            ]
         ],
 
-        feedbackCorrect: 'Great! Present Continuous and Simple Past are correct.',
-        feedbackWrong: 'Incorrect answer.'
+        feedback: '"keep" and "chose" are the best options to complete.'
     },
 
     {
-        image: "images/potion.jpg",
+        image: "images/poke3.jpg",
 
-        text: 'Emma _____ a magic potion and it _____ blue.',
+        text: "Heracross ____ ash's last pokémon and he need to defeat Blastoise, ",
 
         options: [
-            { word: "made", correct: true },
-            { word: "make", correct: false },
-            { word: "became", correct: true },
-            { word: "become", correct: false }
+            [
+                { word: "made", correct: true },
+                { word: "make", correct: false },
+                { word: "became", correct: true },
+                { word: "become", correct: false }
+            ],
+            [
+                { word: "made", correct: true },
+                { word: "make", correct: false },
+                { word: "became", correct: true },
+                { word: "become", correct: false }
+            ]
         ],
 
-        feedbackCorrect: 'Excellent! Both verbs are in the correct form.',
-        feedbackWrong: 'Wrong verb tense.'
+        feedback: ''
     },
 
     {
-        image: "images/dragon.jpg",
+        image: "images/poke4.png",
 
-        text: 'The dragon _____ sleeping when Emma _____ the door.',
+        text: '',
 
         options: [
-            { word: "was", correct: true },
-            { word: "were", correct: false },
-            { word: "opened", correct: true },
-            { word: "open", correct: false }
+            [
+                { word: "was", correct: true },
+                { word: "were", correct: false },
+                { word: "opened", correct: true },
+                { word: "open", correct: false }
+            ],
+            [
+                { word: "was", correct: true },
+                { word: "were", correct: false },
+                { word: "opened", correct: true },
+                { word: "open", correct: false }
+            ]
         ],
 
-        feedbackCorrect: 'Perfect answer!',
-        feedbackWrong: 'Incorrect grammar choice.'
+        feedback: 'Perfect answer!'
     },
 
     {
-        image: "images/ending.jpg",
+        image: "images/poke5.jpg",
 
-        text: 'Emma _____ now a great wizard and she _____ many friends.',
+        text: '',
 
         options: [
-            { word: "is", correct: true },
-            { word: "are", correct: false },
-            { word: "has", correct: true },
-            { word: "have", correct: false }
+            [
+                { word: "is", correct: true },
+                { word: "are", correct: false },
+                { word: "has", correct: true },
+                { word: "have", correct: false }
+            ],
+            [
+                { word: "is", correct: true },
+                { word: "are", correct: false },
+                { word: "has", correct: true },
+                { word: "have", correct: false }
+            ]
         ],
 
-        feedbackCorrect: 'Amazing! You finished the game!',
-        feedbackWrong: 'Not quite correct.'
+        feedback: ''
     }
 ];
 
@@ -134,11 +169,11 @@ function selectOption(option) {
         xp += 10;
         correctSelections++;
 
-        feedback.innerHTML = chapters[currentChapter].feedbackCorrect;
+        feedback.innerHTML = chapters[currentChapter].feedback;
     } else {
         xp += 3;
 
-        feedback.innerHTML = chapters[currentChapter].feedbackWrong;
+        feedback.innerHTML = chapters[currentChapter].feedback;
     }
 
     xpText.innerText = xp;
